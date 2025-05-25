@@ -1,5 +1,5 @@
   <!-- Filtro -->
-  <form action="lista_atividade.php" method="GET">
+  <form action="lista_receita.php" method="GET">
     <fieldset>
         <legend>Busca</legend>
         <label for="busca">Busca</label>
@@ -14,11 +14,13 @@
     </fieldset>
 </form>
 <!-- Listagem -->
-<h1>Listagem de Atividades</h1>
+<h1>Listagem de Receitas</h1>
 <table border="1">
     <th>Id</th>
-    <th>Descrição</th>
-    <th>Peso</th>
-    <th>Anexo</th>
+    <th>Nome</th>
+    <th>Ingredientes</th>
+    <th>Foto do Prato</th>
+    <th>Modo de Preparo</th>
+    <th>Tempo de Preparo</th>
     {itens}
 </table>

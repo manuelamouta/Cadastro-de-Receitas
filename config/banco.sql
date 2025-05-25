@@ -1,21 +1,17 @@
-create database siga;
-use siga;
+create database receita;
 
-create table atividade(
-id int auto_increment primary key,
-descricao varchar(250),
-peso decimal(16,2),
-anexo varchar(250) );
+use receita;
 
-
-create table usuario(
+create table receita(
 id int auto_increment primary key,
 nome varchar(250),
-email varchar(250),
-senha varchar(250),
-matricula varchar(250),
-contato varchar(250) );
+ingredientes varchar(250),
+foto_prato varchar(250),
+modo_preparo varchar(250),
+tempo_preparo varchar(250) );
 
 
-select * from atividade;
+select * from receita;
 -- script de criação do banco de dados
+
+ 
