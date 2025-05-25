@@ -4,18 +4,19 @@ class Receita{
     private $id;
     private $nome;
     private $ingredientes;
+    private $foto_prato;
     private $modo_preparo;
     private $tempo_preparo;
-    private $foto_prato;
+   
 
     // construtor da classe
-    public function __construct($id,$nome,$ingredientes,$modo_preparo,$tempo_preparo,$foto_prato){
+    public function __construct($id,$nome,$ingredientes,$foto_prato,$modo_preparo,$tempo_preparo){
         $this->id = $id;
         $this->nome = $nome;
         $this->ingredientes = $ingredientes;
+        $this->foto_prato = $foto_prato;
         $this->modo_preparo = $modo_preparo;
         $this->tempo_preparo = $tempo_preparo;
-        $this->foto_prato = $foto_prato;
     }
 
     // função / interface para aterar e ler
@@ -34,10 +35,7 @@ class Receita{
     }
 
     public function setIngredientes($ingredientes){
-            if ($ingredientes < 0)
-                throw new Exception("Erro, o ingrediente deve ser maior que 0!");
-            else
-                $this->ingredientes = $ingredientes;
+        $this->ingredientes = $ingredientes;
     }
     // foto_prato pode ser em branco por isso o parâmetro é opcional
     public function setFoto_prato($foto_prato = ''){
@@ -58,7 +56,7 @@ class Receita{
     public function getnome(): String{
         return $this->nome;
     }
-    public function getingredientes(): float{
+    public function getingredientes(): String{
         return $this->ingredientes;
     }
     public function getFoto_prato(): String{
