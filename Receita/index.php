@@ -11,7 +11,7 @@ if ($_SERVER['REQUEST_METHOD'] == 'POST'){
     $acao = isset($_POST['acao'])?$_POST['acao']:"";
 
     $destino_anexo = 'uploads/'.$_FILES['foto_prato']['name'];
-    move_uploaded_file($_FILES['anexo']['tmp_name'],PATH_UPLOAD.$destino_anexo);
+    move_uploaded_file($_FILES['foto_prato']['tmp_name'],PATH_UPLOAD.$destino_anexo);
     $receita = new Receita($id,$nome,$ingredientes,$destino_anexo, $modo_preparo, $tempo_preparo);
     if ($acao == 'salvar')
         if ($id > 0)
