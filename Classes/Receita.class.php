@@ -66,7 +66,12 @@ class Receita{
             ':tempo_preparo'=>$this->getTempo_preparo()
         );
         
-        return Database::executar($sql, $parametros);
+        try {
+            $stmt = Database::executar($sql, $parametros);
+            return $stmt->rowCount() > 0;
+        } catch (PDOException $e) {
+            return false;
+        }
     }
 
     //lista receitas do banco (com opção de filtro)
@@ -111,13 +116,23 @@ class Receita{
             ':tempo_preparo'=>$this->getTempo_preparo()
        );
        
-       return Database::executar($sql, $parametros);
+       try {
+            $stmt = Database::executar($sql, $parametros);
+            return $stmt->rowCount() > 0;
+        } catch (PDOException $e) {
+            return false;
     }
+}
 
     //remove a receita do banco
     public function excluir():Bool{
         $sql = "DELETE FROM receita WHERE id = :id";
         $parametros = array(':id'=>$this->getid());
-        return Database::executar($sql, $parametros);
+        try {
+            $stmt = Database::executar($sql, $parametros);
+            return $stmt->rowCount() > 0;
+        } catch (PDOException $e) {
+            return false;
+}
     }
 }
