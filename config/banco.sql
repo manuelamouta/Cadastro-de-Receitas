@@ -12,6 +12,6 @@ tempo_preparo varchar(250) );
 
 
 select * from receita;
--- script de criação do banco de dados
+
 
  
