@@ -21,10 +21,7 @@ class Receita{
 
     // função / interface para aterar e ler
     public function setNome($nome){
-        if ($nome == "")
-            throw new Exception("Erro, o nome deve ser informado!");
-        else
-            $this->nome = $nome;
+        $this->nome = $nome;
     }
     // cada atributo tem um método set para alterar seu valor
     public function setId($id){
